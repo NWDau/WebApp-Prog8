@@ -11,6 +11,34 @@ const server =
 
       res.write('<html> <head> <title> Served </title> </head>')
       res.write('<body>')
+      res.write(`
+              <table border="1" style="border-collapse: collapse; width: 100%;">
+                <tr>
+                  <th>Sapporo, Japan</th>
+                  <th>Toulouse, France</th>
+                  <th>Curitiba, Brazil</th>
+                  <th>Hobart, Australia</th>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Where I want to go</h3>
+                    <p>Curitiba, Brazil</p>
+                  </td>
+                  <td>
+                    <h3>How I got the city</h3>
+                    <p>Picked this city from a random generator</p>
+                  </td>
+                  <td>
+                    <h3>Distance from favorite city</h3>
+                    <p>5,350 miles</p>
+                  </td>
+                  <td>
+                    <h3>Travel cost</h3>
+                    <p>Travel cost around $1,500</p>
+                  </td>
+                </tr>
+              </table>
+            `);
       res.write('Content \n')
       res.write('More content \n')
       res.write('Hello World')    
