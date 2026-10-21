@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Computation of Something</title>
+
+</head>
+<body>
+    <h1>Dau uses a fetch request</h1>
+
+    <label for="x">Enter x:</label>
+    <input type="number" id="x" value="10">
+
+    <br><br>
+
+    <label for="y">Enter y:</label>
+    <input type="number" id="y" value="11">
+
+    <br><br>
+
+    <button id="computeButton">Invoke computation on Server</button>
+
+    <div id="result"></div>
+
+    <script>
+        const button = document.getElementById("computeButton");
+
+        button.addEventListener("click", function() {
+            const x = document.getElementById("x").value;
+            const y = document.getElementById("y").value;
+
+            const url = `http://127.0.0.1:3001/?x=${encodeURIComponent(x)}&y=${encodeURIComponent(y)}`;
+
+            fetch(url)
+
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Server request failed");
+
+                    }
+                    return response.text;
+                })
+                .then(data => {
+                    document.getElementById("result").textContent = data;
+
+                })
+
+                .catch(error => {
+                    docutment.getElementById("result").textContent = 
+                    "Error: " + error.message;
+                })
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>
