@@ -38,7 +38,7 @@
                         throw new Error("Server request failed");
 
                     }
-                    return response.text;
+                    return response.text();
                 })
                 .then(data => {
                     document.getElementById("result").textContent = data;
@@ -46,13 +46,13 @@
                 })
 
                 .catch(error => {
-                    docutment.getElementById("result").textContent = 
+                    document.getElementById("result").textContent = 
                     "Error: " + error.message;
                 })
         })
 
     </script>
-    <div id="result"></div>
+   
 
 
 
