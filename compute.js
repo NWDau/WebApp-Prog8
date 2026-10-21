@@ -6,7 +6,8 @@ const port = process.env.port || 3001               //and the port
 
 const server =
   http.createServer(            //Creates the response loop
-    (req,res)=> {               //Anonymous function to handle the request
+    (req,res)=> {  
+      res.setHeader('Access-Control-Allow-Origin', '*');             //Anonymous function to handle the request
       console.log("Request recieved")
       console.log(req.url)
       // Build a fake url so we can get the search parameters using a URL object
