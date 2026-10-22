@@ -1,7 +1,7 @@
 const http = require('http');
 
-const hostname = ProcessingInstruction.env.hostname || '127.0.0.1';
-const port = ProcessingInstruction.env.port || 3002;
+const hostname = process.env.hostname || '127.0.0.1';
+const port = process.env.port || 3002;
 
 const ingredients = [
     { name: 'fruit', amount: 6, unit: 'cups'},
@@ -9,10 +9,10 @@ const ingredients = [
     { name: 'Flour', amount: 1, unit: 'cup'},
     { name: 'Butter', amount: 0.5, unit: 'cup'},
     { name: 'Milk', amount: 0.75, unit: 'cup'},
-    { name: 'Bkaing powder', amount: 2, unit: 'teaspoons'}
+    { name: 'Baking powder', amount: 2, unit: 'teaspoons'}
 ];
 
-const use = [
+const used = [
     false, 
     false,
     false,
@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
                     <title>Dau lists an ingredient</title>
                 </head>
                 <body>
-                    <h1>Dulce de leche Cobbler Ingredient Collection</h1>
+                    <h1>Dulce de leche Ingredient Collection</h1>
                     <p>nothing left</p>
                 </body>
                 </html>
